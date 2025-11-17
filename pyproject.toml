@@ -1,0 +1,80 @@
+[project]
+name = "mysite"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "k.barylnikov",email = "ipt_git_bot@ipt.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4"
+dependencies = [
+    "asgiref (>=3.10.0,<4.0.0)",
+    "django (>=5.2.8,<6.0.0)",
+    "sqlparse (>=0.5.3,<0.6.0)",
+    "django-environ (>=0.12.0,<0.13.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "ruff (>=0.14.5,<0.15.0)"
+]
+
+[tool.ruff]
+line-length = 120
+format.preview = true  # To enable quote-style preserve
+format.quote-style = 'preserve'
+target-version = 'py310'
+exclude = [
+    ".git",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".run",
+    ".venv",
+    "logs",
+    "docs",
+    "migrations",
+]
+lint.preview = true  # To enable FURB
+lint.select = [
+    "A",  # flake8-builtins
+    "ASYNC",  # flake8
+    "B",  # flake8-bugbear for B023
+    "C4",  # flake8 comprehensions
+    "COM",  # flake8 commas
+    "E",  # pycodestyle error
+    "F",  # pyflakes
+    "FURB",  # refurb
+    "I",  # isort
+    "N",  # pep8 naming
+    "PERF",  # perflint
+    "PIE",  # flake8 pie
+    "PGH",  # pygrep hooks
+    "SIM",  # flake8 simplify
+    "T20",  # flake8 print
+    "TRY",  # tryceratops
+    "W",  # pycodestyle warning
+]
+lint.ignore = [
+    "COM812",  # Trailing comma missing (imposing formatting style)
+    "N805",  # First argument should be named `self` (false positives on pydantic.validator)
+    "PLR0913",  # Too many arguments in function definition
+    "PLR0917",  # Too many positional arguments
+    "PLW1641",  # Object does not implement `__hash__` method
+    "RUF002",  # Ambiguous unicode character docstring (false positives on russian symbols)
+    "RUF003",  # Ambiguous unicode character comment (false positives on russian symbols)
+    "S101",  # Use of `assert` detected
+    "S104",  # Possible binding to all interfaces
+    "SIM105",  # Suppressible exception (performance problems)
+    "SIM108",  # Use ternary operator instead of `if`-`else`-block" (imposing code style)
+    "SIM116",  # If else block instead of dict lookup (worse readability in some cases)
+    "TRY003",  # Avoid specifying long messages outside the exception class
+    "UP032",  # Use f-string instead of format call (imposing code style)
+    "UP041",  # Replace aliased errors with TimeoutError (dubious rational on 3.10)
+    "PGH004",  # Check for noqa annotations that suppress all diagnostics, as opposed to targeting specific diagnostics.
+]
