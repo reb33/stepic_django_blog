@@ -1,8 +1,11 @@
-lint: ruff-format ruff
+lint: ruff
 
 ruff:
+	ruff format
 	ruff check --fix
 
-ruff-format:
-	ruff format
+data:
+	python manage.py migrate
+	python -Xutf8 manage.py loaddata mysite_data.json
+
 
