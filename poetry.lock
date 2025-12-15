@@ -359,6 +359,24 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-bootstrap5"
+version = "25.3"
+description = "Bootstrap 5 for Django"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "django_bootstrap5-25.3-py3-none-any.whl", hash = "sha256:3d381a5329a1439ac3237456c28cc8170c62b4c56ad3564d57876ffc3d4c5e78"},
+    {file = "django_bootstrap5-25.3.tar.gz", hash = "sha256:cc36f1a19d3200c0f5628c703320edb5c4e39e19bf17607fadf58ddb11828912"},
+]
+
+[package.dependencies]
+django = ">=4.2"
+
+[package.extras]
+jinja = ["jinja2 (>=3.0,<4)"]
+
+[[package]]
 name = "django-environ"
 version = "0.12.0"
 description = "A package that allows you to utilize 12factor inspired environment variables to configure your Django application."
@@ -915,4 +933,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4"
-content-hash = "b3c41a4f3d7006e0c1d0ac48afbba2f4da05f962d8658a9b278d6f1e3b76f0a3"
+content-hash = "e0c6673db6f3b7c53d3e909f9495feb8675f850ea4baf71b7981da97c570b752"
