@@ -526,11 +526,47 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add profile",
+    "content_type": 12,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change profile",
+    "content_type": 12,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete profile",
+    "content_type": 12,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view profile",
+    "content_type": 12,
+    "codename": "view_profile"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$1000000$4EuZK64CF2kEJ9Pllj1uBi$e81Iy2xWR0O/OyK6UbcDRvVXfItg4i75s1WkiLddlC4=",
-    "last_login": "2025-11-12T20:33:16.306Z",
+    "last_login": "2025-12-10T21:24:19.501Z",
     "is_superuser": true,
     "username": "user",
     "first_name": "",
@@ -632,11 +668,27 @@
   }
 },
 {
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "accounts",
+    "model": "profile"
+  }
+},
+{
   "model": "sessions.session",
   "pk": "6jfxy90i8woznhh2mmvlpmpktozbcjth",
   "fields": {
     "session_data": ".eJxVjEEOwiAQRe_C2pChjlBcuvcMZIYBqRpISrsy3l2bdKHb_977LxVoXUpYe5rDJOqsjDr8bkzxkeoG5E711nRsdZkn1puid9r1tUl6Xnb376BQL996BM8AKRJ7GdCM6Fi8izEbimy8RWZwTk4eMzAhZQtHS5wGZzMigXp_APPrOFA:1vJHWm:WBEsq1sJPkZewuuZ9zA8Rf_S-RX0KKHoHnEUhFnidVI",
     "expire_date": "2025-11-26T20:33:16.307Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "yprmcecog9h48683oz323g09wk1fnnh8",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pChjlBcuvcMZIYBqRpISrsy3l2bdKHb_977LxVoXUpYe5rDJOqsjDr8bkzxkeoG5E711nRsdZkn1puid9r1tUl6Xnb376BQL996BM8AKRJ7GdCM6Fi8izEbimy8RWZwTk4eMzAhZQtHS5wGZzMigXp_APPrOFA:1vTRfX:2th0HZ4GF-Fg7bn0Va7kt7LPkIGZQCOwWNONfTHOlww",
+    "expire_date": "2026-01-09T21:24:19.503Z"
   }
 },
 {
@@ -690,8 +742,8 @@
     "body": "В условиях глобальной экономической нестабильности и стремительной трансформации рынков способность компаний адаптироваться к изменениям среды становится критическим фактором конкурентоспособности. Это определяет актуальность комплексного изучения как внешних (макроэкономических, отраслевых, рыночных), так и внутренних (ресурсных, организационных, культурных) детерминант развития. Понимание их природы и динамики позволяет компаниям формировать устойчивые стратегии в быстро меняющейся бизнес-среде.",
     "author": 1,
     "publish": "2025-11-15T18:19:48Z",
-    "created": "2025-11-15T18:20:29.000Z",
-    "updated": "2025-11-15T18:20:29.000Z",
+    "created": "2025-11-15T18:20:29Z",
+    "updated": "2025-11-15T18:20:29Z",
     "status": "PB"
   }
 },
@@ -836,6 +888,15 @@
   "fields": {
     "domain": "localhost:8000",
     "name": "localhost:8000"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "avatar": "default.jpg",
+    "bio": ""
   }
 }
 ]
