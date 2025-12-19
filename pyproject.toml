@@ -19,6 +19,7 @@ dependencies = [
     "pillow (>=12.0.0,<13.0.0)",
     "social-auth-app-django (>=5.6.0,<6.0.0)",
     "django-bootstrap5 (>=25.3,<26.0)",
+    "djangorestframework (>=3.16.1,<4.0.0)",
 ]
 
 

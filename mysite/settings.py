@@ -53,8 +53,17 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'accounts',
     'social_django',
-'   django_bootstrap5'
+    'django_bootstrap5',
+    # API new
+    'rest_framework',
+    'blog_api.apps.BlogApiConfig',
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.AllowAny",
+    ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,7 +134,6 @@ AUTH_PASSWORD_VALIDATORS = [
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
     'social_core.backends.google.GoogleOAuth2',
-
     'django.contrib.auth.backends.ModelBackend',
 )
 
