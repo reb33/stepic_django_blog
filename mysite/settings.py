@@ -64,7 +64,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
     ],
-    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']  # new чтобы использовать бэкэнд django-filter по умолчанию
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],  # чтобы использовать бэкэнд django-filter по умолчанию
+
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',  # new
+    'PAGE_SIZE': 3   # new
 }
 
 MIDDLEWARE = [
