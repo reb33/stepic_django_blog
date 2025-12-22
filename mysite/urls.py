@@ -35,4 +35,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('api/', include('blog_api.urls')),
+    path('api-auth/', include('rest_framework.urls')), # используем встроенную систему авторизации в DRF
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
