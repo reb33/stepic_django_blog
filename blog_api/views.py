@@ -1,5 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import generics
+from rest_framework import generics, permissions
 from blog.models import Post
 from .serializers import PostSerializer
 
@@ -7,13 +7,15 @@ from .serializers import PostSerializer
 class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filter_backends = [DjangoFilterBackend]  # new
-    filterset_fields = ['author']  # new
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['author']
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView): # Представление для GET (один пост), PUT/PATCH (обновление), DELETE (удаление).
-    queryset = Post.objects.all()  # Все посты
-    serializer_class = PostSerializer  # Использует PostSerializer
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    permission_classes = (permissions.IsAdminUser,)  # new
 
 
 class UserPostList(generics.ListAPIView):
