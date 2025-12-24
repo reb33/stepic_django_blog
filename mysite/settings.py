@@ -54,11 +54,11 @@ INSTALLED_APPS = [
     'accounts',
     'social_django',
     'django_bootstrap5',
-    # API new
     'rest_framework',
     'blog_api.apps.BlogApiConfig',
     'django_filters',
     'rest_framework.authtoken',
+    'drf_spectacular', # new
 ]
 
 REST_FRAMEWORK = {
@@ -69,13 +69,14 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-        "rest_framework.authentication.TokenAuthentication",  # new
+        "rest_framework.authentication.TokenAuthentication",
     ),
 
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],  # чтобы использовать бэкэнд django-filter по умолчанию
 
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',  # new
-    'PAGE_SIZE': 3   # new
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 3,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',  # new
 }
 
 MIDDLEWARE = [
@@ -198,3 +199,10 @@ SOCIAL_AUTH_GITHUB_SECRET = env('SOCIAL_AUTH_GITHUB_SECRET')
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+
+SPECTACULAR_SETTINGS = {  # данные для drf_spectacular
+    "TITLE": "Blog API Project",
+    "DESCRIPTION": "A sample blog to learn about DRF",
+    "VERSION": "1.0.0",
+    # OTHER SETTINGS
+}

@@ -17,3 +17,6 @@ dumpdata:
 migrate:
 	python manage.py makemigrations
 	python manage.py migrate
+
+schema:
+	python manage.py spectacular --file schema.yml
