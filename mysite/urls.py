@@ -27,7 +27,7 @@ sitemaps = {
     'posts': PostSitemap,
 }
 
-urlpatterns = [
+urlpatterns = ([
     path('admin/', admin.site.urls),
     path('', include('blog.urls', namespace='blog')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
@@ -37,3 +37,4 @@ urlpatterns = [
     path('api/', include('blog_api.urls')),
     path('api-auth/', include('rest_framework.urls')), # используем встроенную систему авторизации в DRF
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
