@@ -217,3 +217,5 @@ __marimo__/
 
 gunicorn_config.py
 gunicorn.sh
+
+mysite_data.json
