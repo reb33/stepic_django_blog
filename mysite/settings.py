@@ -33,9 +33,13 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ["kbar-blog-django.ru"]
+if env.get_value('ALLOWED_HOSTS', default=None):
+    ALLOWED_HOSTS = env('ALLOWED_HOSTS').replace(' ', '').split(',')
+else:
+    ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['http://kbar-blog-django.ru', 'https://kbar-blog-django.ru']
+if env.get_value('CSRF_TRUSTED_ORIGINS', default=None):
+    CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS').replace(' ', '').split(',')
 
 
 
